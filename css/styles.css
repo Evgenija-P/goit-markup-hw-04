@@ -141,7 +141,6 @@ img {
 /*Hero*/
 .hero {
     max-width: 1600px;
-    height: 480px;
     padding-top: 200px;
     padding-bottom: 200px;
     margin-left: auto;
@@ -187,27 +186,25 @@ img {
 
 .features-list {
     display: flex;
-    justify-content: space-between;
+
 }
 .features {
     padding-bottom: 0;
 }
 .features-icon-cont {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 270px;
     height: 120px;
-    margin-bottom: 30px;
     background-color: #F5F4FA;
     border-radius: 4px;
 }
 
-.features-icon {
-    margin: auto;
-}
 
 .features-name:not(:last-child),
-.features-text:not(:last-child) {
+.features-text:not(:last-child),
+.features-icon-cont:not(:last-child) {
     margin-right: 30px;
 }
 
@@ -221,6 +218,7 @@ img {
     font-weight: bold;
     line-height: 1.14;
     max-width: 270px;
+    margin-top: 30px;
     text-transform: uppercase;
     color: var(--basic-color);
 }
@@ -320,13 +318,15 @@ img {
     justify-content: center
 }
 
-.social-li {
+.team-soc-link {
     display: flex;
     width: 44px;
     height: 44px;
-    border-radius: 50%;
+    border-radius: 50%; 
+    background-color: #FFFFFF;
     justify-content: center;
     align-items: center;
+    
 }
 .social-li:not(:last-child) {
     margin-right: 10px;
@@ -336,25 +336,31 @@ img {
     fill: #AFB1B8;
 }
 
-.social-li:hover{
+.team-soc-link:hover,
+.team-soc-link:focus {
     background-color: var(--accent-color);
 }
 
-.social-li:hover .team-icon {
+.team-soc-link:hover .team-icon,
+.team-soc-link:focus .team-icon {
     fill: var(--second-accent-color);
 } 
 /*Clients*/
+.client-panel {
+    display: flex;
+}
+
 .client{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
+    margin-bottom: 20px;
 }
 
 .client-list {
     display: flex;
-    margin-top: 20px;
 }
 
 .client-li {
@@ -366,6 +372,17 @@ img {
     border-radius: 4px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.client-soc-link {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
 
 .client-li:not(:last-child) {
@@ -376,17 +393,18 @@ img {
     fill: #AFB1B8;
 }
 
-.client-icon:hover {
+.client-soc-link:hover,
+.client-soc-link:focus {
     fill: var(--accent-color);
-}
-
-.client-li:hover .client-icon {
-    fill: var(--accent-color);
-}
-
-.client-li:hover {
     border: 1px solid var(--accent-color);
+    border-radius: 4px;
 }
+
+.client-soc-link:hover .client-icon,
+.client-soc-link:focus .client-icon {
+    fill: var(--accent-color);
+}
+
 
 /*footer*/
 
@@ -415,7 +433,7 @@ margin-bottom: 20px;
     margin-bottom: 9px;
 }
 
-.footer-social-li{
+.footer-soc-link{
     display: flex;
     width: 44px;
     height: 44px;
@@ -430,18 +448,19 @@ margin-bottom: 20px;
 }
 
 .footer-icon {
-    fill: #AFB1B8;
-}
-
-.footer-social-li:hover {
-    background-color: var(--accent-color);
-}
-
-.footer-social-li:hover .footer-icon {
     fill: var(--second-accent-color);
 }
 
 
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+    background-color: var(--accent-color);
+}
+
+.footer-soc-link:hover .footer-icon,
+.footer-soc-link:focus .footer-icon {
+    fill: var(--second-accent-color);
+}
 
 .footer-body {
     background: #2F303A;
@@ -489,9 +508,6 @@ margin-bottom: 20px;
     display: flex;
     justify-content: center;
 }
-/* .filters-li {
-    margin: 6px,22px;
-} */
 
 .filters-li:not(:last-child) {
     margin-right: 8px;
@@ -513,6 +529,17 @@ margin-bottom: 20px;
     background: #F5F4FA;
     border-radius: 4px;
 }
+
+.btn-text:hover,
+.btn-text:focus {
+    color: var(--second-accent-color);
+    background: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
 .products {
     border:1px solid #EEEEEE;
     /* margin-bottom: 20px; */
@@ -522,7 +549,6 @@ margin-bottom: 20px;
     display: block;
     font-weight: bold;
     font-size: 18px;
-    margin-top: 20px;
     line-height: 2;
     letter-spacing: 0.06em;
     color: var(--basic-color);
@@ -550,7 +576,8 @@ margin-bottom: 20px;
 .products-link {
     display: inline-block;
 }
-.products-link:hover {
+.products-link:hover,
+.products-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
         0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -564,12 +591,3 @@ margin-bottom: 20px;
 }
 
 
-.btn-text:hover,
-.btn-text:focus {
-    color: var(--second-accent-color);
-    background: var(--accent-color);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-    0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-}
